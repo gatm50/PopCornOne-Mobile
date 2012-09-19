@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B604DF45-24AF-4465-B70A-B00FFA1B6056}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>AndroidCore</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross.Android">
+      <HintPath>..\..\MvvmCross\Cirrious\Cirrious.MvvmCross\Bin\Debug\Cirrious.MvvmCross.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WindowsPhoneCore\App.cs">
+      <Link>App.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ApplicationObjects\StartApplicationObject.cs">
+      <Link>ApplicationObjects\StartApplicationObject.cs</Link>
+    </Compile>
+    <Compile Include="Service References\PhraseReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TranslationReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ViewModels\DetailViewModel.cs">
+      <Link>ViewModels\DetailViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ViewModels\MainViewModel.cs">
+      <Link>ViewModels\MainViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ViewModels\ResultViewModel.cs">
+      <Link>ViewModels\ResultViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\WindowsPhoneCore\ServiceReferences.ClientConfig">
+      <Link>ServiceReferences.ClientConfig</Link>
+    </None>
+    <None Include="Service References\PhraseReference\Core.PhraseReference.Phrase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhraseReference\PhraseService.wsdl" />
+    <None Include="Service References\PhraseReference\PhraseService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhraseReference\PhraseService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhraseReference\PhraseService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\Core.TranslationReference.Translation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService.wsdl" />
+    <None Include="Service References\TranslationReference\TranslationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhraseReference\configuration91.svcinfo" />
+    <None Include="Service References\PhraseReference\configuration.svcinfo" />
+    <None Include="Service References\PhraseReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PhraseReference\" />
+    <WCFMetadataStorage Include="Service References\TranslationReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TranslationReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TranslationReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TranslationReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
