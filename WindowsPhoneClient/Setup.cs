@@ -24,7 +24,7 @@ namespace WindowsPhoneClient
 
         protected override MvxApplication CreateApp()
         {
-            var app = new WindowsPhoneCore.App();
+            var app = new Core.App();
             return app;
         }
     }

@@ -1,10 +1,10 @@
 ﻿using Cirrious.MvvmCross.Application;
+using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.ServiceProvider;
 using Cirrious.MvvmCross.Interfaces.ViewModels;
-using Cirrious.MvvmCross.ExtensionMethods;
-using WindowsPhoneCore.ApplicationObjects;
+using Core.ApplicationObjects;
 
-namespace WindowsPhoneCore
+namespace Core
 {
     public class App
         : MvxApplication

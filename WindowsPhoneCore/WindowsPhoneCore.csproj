@@ -9,7 +9,7 @@
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsPhoneCore</RootNamespace>
+    <RootNamespace>Core</RootNamespace>
     <AssemblyName>WindowsPhoneCore</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -75,6 +75,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\PhraseReference\Core.PhraseReference.Phrase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PhraseReference\PhraseService.wsdl" />
     <None Include="Service References\PhraseReference\PhraseService.xsd">
       <SubType>Designer</SubType>
@@ -85,7 +88,7 @@
     <None Include="Service References\PhraseReference\PhraseService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhraseReference\WindowsPhoneCore.PhraseReference.Phrase.datasource">
+    <None Include="Service References\TranslationReference\Core.TranslationReference.Translation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TranslationReference\TranslationService.wsdl" />
@@ -100,9 +103,6 @@
     </None>
     <None Include="Service References\TranslationReference\TranslationService3.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TranslationReference\WindowsPhoneCore.TranslationReference.Translation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PhraseReference\configuration91.svcinfo" />
     <None Include="Service References\PhraseReference\configuration.svcinfo" />

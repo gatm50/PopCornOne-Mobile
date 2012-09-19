@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Cirrious.MvvmCross.WindowsPhone.Views;
-using WindowsPhoneCore.ViewModels;
+using Core.ViewModels;
 
 namespace WindowsPhoneClient.Views
 {
