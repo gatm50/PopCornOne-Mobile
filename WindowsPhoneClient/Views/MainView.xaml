@@ -13,38 +13,73 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="False"
+    x:Name="This">
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
         <controls:Panorama Title="Phrase Finder" >
             <controls:Panorama.Background>
-                <ImageBrush ImageSource="../PanoramaBackground.png"/>
+                <ImageBrush ImageSource="../back4.png"/>
             </controls:Panorama.Background>
 
             <!--Panorama item one-->
             <controls:PanoramaItem Header="Lexic Search">
                 <Grid>
                     <Button Content="Search" Height="72" HorizontalAlignment="Left" Margin="128,96,0,0" Name="btnSearch" VerticalAlignment="Top" Width="160" Command="{Binding SearchCommand}" />
-                    <TextBox Height="72" HorizontalAlignment="Left" Margin="12,17,0,0" Name="txtSearch" Text="{Binding Search, Mode=TwoWay}" VerticalAlignment="Top" Width="398" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="12,17,0,0" Name="txtSearch" Text="{Binding SearchTerm, Mode=TwoWay}" VerticalAlignment="Top" Width="398" />
                 </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item two-->
             <controls:PanoramaItem Header="Alphabetic">
                 <Grid>
-                    <HyperlinkButton Content="A" Height="49" HorizontalAlignment="Left" Margin="20,30,0,0" Name="hlbALetter" VerticalAlignment="Top" Width="47" FontSize="32" />
+                    <HyperlinkButton Content="A" HorizontalAlignment="Left" Margin="10,0,0,0" Name="hlbALetterA" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="A" />
+                    <HyperlinkButton Content="B" HorizontalAlignment="Left" Margin="100,0,0,0" Name="hlbALetterB" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="B" />
+                    <HyperlinkButton Content="C" HorizontalAlignment="Left" Margin="190,0,0,0" Name="hlbALetterC" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="C" />
+                    <HyperlinkButton Content="D" HorizontalAlignment="Left" Margin="280,0,0,0" Name="hlbALetterD" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="D" />
+                    <HyperlinkButton Content="E" HorizontalAlignment="Left" Margin="10,70,0,0" Name="hlbALetterE" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="E" />
+                    <HyperlinkButton Content="F" HorizontalAlignment="Left" Margin="100,70,0,0" Name="hlbALetterF" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="F" />
+                    <HyperlinkButton Content="G" HorizontalAlignment="Left" Margin="190,70,0,0" Name="hlbALetterG" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="G" />
+                    <HyperlinkButton Content="H" HorizontalAlignment="Left" Margin="280,70,0,0" Name="hlbALetterH" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="H" />
+                    <HyperlinkButton Content="I" HorizontalAlignment="Left" Margin="10,140,0,0" Name="hlbALetterI" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="I" />
+                    <HyperlinkButton Content="J" HorizontalAlignment="Left" Margin="100,140,0,0" Name="hlbALetterJ" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="J" />
+                    <HyperlinkButton Content="K" HorizontalAlignment="Left" Margin="190,140,0,0" Name="hlbALetterK" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="K" />
+                    <HyperlinkButton Content="L" HorizontalAlignment="Left" Margin="280,140,0,0" Name="hlbALetterL" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="L" />
+                    <HyperlinkButton Content="M" HorizontalAlignment="Left" Margin="10,210,0,0" Name="hlbALetterM" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="M" />
+                    <HyperlinkButton Content="N" HorizontalAlignment="Left" Margin="100,210,0,0" Name="hlbALetterN" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="N" />
+                    <HyperlinkButton Content="O" HorizontalAlignment="Left" Margin="190,210,0,0" Name="hlbALetterO" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="O" />
+                    <HyperlinkButton Content="P" HorizontalAlignment="Left" Margin="280,210,0,0" Name="hlbALetterP" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="P" />
+                    <HyperlinkButton Content="Q" HorizontalAlignment="Left" Margin="10,280,0,0" Name="hlbALetterQ" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="Q" />
+                    <HyperlinkButton Content="R" HorizontalAlignment="Left" Margin="100,280,0,0" Name="hlbALetterR" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="R" />
+                    <HyperlinkButton Content="S" HorizontalAlignment="Left" Margin="190,280,0,0" Name="hlbALetterS" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="S" />
+                    <HyperlinkButton Content="T" HorizontalAlignment="Left" Margin="280,280,0,0" Name="hlbALetterT" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="T" />
+                    <HyperlinkButton Content="U" HorizontalAlignment="Left" Margin="10,350,0,0" Name="hlbALetterU" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="U" />
+                    <HyperlinkButton Content="V" HorizontalAlignment="Left" Margin="100,350,0,0" Name="hlbALetterV" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="V" />
+                    <HyperlinkButton Content="W" HorizontalAlignment="Left" Margin="190,350,0,0" Name="hlbALetterW" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="W" />
+                    <HyperlinkButton Content="X" HorizontalAlignment="Left" Margin="280,350,0,0" Name="hlbALetterX" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="X" />
+                    <HyperlinkButton Content="Y" HorizontalAlignment="Left" Margin="10,420,0,0" Name="hlbALetterY" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="Y" />
+                    <HyperlinkButton Content="Z" HorizontalAlignment="Left" Margin="100,420,0,0" Name="hlbALetterZ" VerticalAlignment="Top" FontSize="55" Command="{Binding CharacterCommand}" CommandParameter="Z" />
                 </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item three-->
             <controls:PanoramaItem Header="All Lexics">
                 <Grid>
-                    <ToggleButton Height="80" Width="294" Margin="56,14,70,404">On</ToggleButton>
-                    <ListBox Height="395" HorizontalAlignment="Left" Margin="1,103,0,0" Name="listBox1" VerticalAlignment="Top" Width="417" ItemsSource="{Binding}" FontSize="26">
-                        <ListBoxItem Content="Item 1" />
-                        <ListBoxItem Content="Item 2" />
-                        <ListBoxItem Content="Item 3" />
+                    <ListBox Height="395" HorizontalAlignment="Left" 
+                             Margin="1,103,0,0" Name="lsbAllLexical" 
+                             VerticalAlignment="Top" Width="417" 
+                             ItemsSource="{Binding AllLexicals}" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <HyperlinkButton
+                                    Command="{Binding ElementName=This, 
+                                    Path=DataContext.LexicalCommand}" 
+                                    CommandParameter="{Binding}"
+                                    Content="{Binding}" FontSize="42"  
+                                    />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
             </controls:PanoramaItem>

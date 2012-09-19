@@ -15,12 +15,12 @@ using WindowsPhoneCore.ViewModels;
 
 namespace WindowsPhoneClient.Views
 {
-    public partial class ResultView : BaseResultView
+    public partial class DetailView : BaseDetailView
     {
-        public ResultView()
+        public DetailView()
         {
             InitializeComponent();
         }
     }
-    public class BaseResultView : MvxPhonePage<ResultViewModel> { }
+    public class BaseDetailView : MvxPhonePage<DetailViewModel> { }
 }

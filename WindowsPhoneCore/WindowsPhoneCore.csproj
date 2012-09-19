@@ -44,6 +44,8 @@
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
       <HintPath>..\..\MvvmCross\Cirrious\Cirrious.MvvmCross\Bin\Debug\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -55,10 +57,77 @@
     <Compile Include="App.cs" />
     <Compile Include="ApplicationObjects\StartApplicationObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PhraseReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TranslationReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ResultViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PhraseReference\PhraseService.wsdl" />
+    <None Include="Service References\PhraseReference\PhraseService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhraseReference\PhraseService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhraseReference\PhraseService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhraseReference\WindowsPhoneCore.PhraseReference.Phrase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService.wsdl" />
+    <None Include="Service References\TranslationReference\TranslationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\TranslationService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TranslationReference\WindowsPhoneCore.TranslationReference.Translation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PhraseReference\configuration91.svcinfo" />
+    <None Include="Service References\PhraseReference\configuration.svcinfo" />
+    <None Include="Service References\PhraseReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PhraseReference\" />
+    <WCFMetadataStorage Include="Service References\TranslationReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TranslationReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TranslationReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TranslationReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions />
