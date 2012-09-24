@@ -17,10 +17,12 @@ namespace Core.ViewModels
         {
             this.Results = new ObservableCollection<Translation>();
             _translationClient = new TranslationServiceClient();
+#if SILVERLIGHT
             _translationClient.DisplayTranslationByLexiconCompleted += new EventHandler<DisplayTranslationByLexiconCompletedEventArgs>(DisplayTranslationByLexiconCompleted);
             _translationClient.DisplayTranslationByFirstLetterCompleted += new EventHandler<DisplayTranslationByFirstLetterCompletedEventArgs>(DisplayTranslationByFirstLetterCompleted);
             _translationClient.DisplayTranslationByLanguageCompleted += new EventHandler<DisplayTranslationByLanguageCompletedEventArgs>(DisplayTranslationByLanguageCompleted);
-
+#else
+#endif
             this.PhraseCommand = new MvxRelayCommand<Translation>(this.GoPhrase_Execute, this.GoPhrase_CanExecute);
 
             this.ExecuteQueryByType(type, valueToQuery);
@@ -31,16 +33,28 @@ namespace Core.ViewModels
             switch (type)
             {
                 case "ByFirstCharacter":
+#if SILVERLIGHT
                     _translationClient.DisplayTranslationByFirstLetterAsync(valueToQuery, 1);
+#else
+#endif
                     break;
                 case "ByLexicon":
+#if SILVERLIGHT
                     _translationClient.DisplayTranslationByLexiconAsync(valueToQuery, 1);
+#else
+#endif
                     break;
                 case "ByLanguage":
+#if SILVERLIGHT
                     _translationClient.DisplayTranslationByLanguageAsync(1);
+#else
+#endif
                     break;
                 default:
+#if SILVERLIGHT
                     _translationClient.DisplayTranslationByLanguageAsync(1);
+#else
+#endif
                     break;
             }
         }

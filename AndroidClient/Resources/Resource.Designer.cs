@@ -49,17 +49,23 @@ namespace AndroidClient
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f040005
+			public const int LoadingText = 2130968581;
+			
 			// aapt resource value: 0x7f040001
 			public const int MvxBindableListItemTagUnique = 2130968577;
 			
 			// aapt resource value: 0x7f040000
 			public const int MvxBindingTagUnique = 2130968576;
 			
+			// aapt resource value: 0x7f040004
+			public const int button1 = 2130968580;
+			
 			// aapt resource value: 0x7f040003
-			public const int button1 = 2130968579;
+			public const int editText1 = 2130968579;
 			
 			// aapt resource value: 0x7f040002
-			public const int editText1 = 2130968578;
+			public const int linearLayout1 = 2130968578;
 			
 			private Id()
 			{
@@ -70,10 +76,16 @@ namespace AndroidClient
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Main_ViewModel = 2130903040;
 			
 			// aapt resource value: 0x7f030001
 			public const int MainView = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int ResultView = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int SplashScreen = 2130903043;
 			
 			private Layout()
 			{
@@ -83,11 +95,11 @@ namespace AndroidClient
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
-			
 			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			public const int ApplicationName = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int Loading = 2131034113;
 			
 			private String()
 			{

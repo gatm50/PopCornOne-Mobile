@@ -10,26 +10,29 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Core</RootNamespace>
-    <AssemblyName>AndroidCore</AssemblyName>
+    <AssemblyName>Core</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cirrious.MvvmCross.Android">
@@ -38,8 +41,11 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -50,15 +56,8 @@
     <Compile Include="..\WindowsPhoneCore\ApplicationObjects\StartApplicationObject.cs">
       <Link>ApplicationObjects\StartApplicationObject.cs</Link>
     </Compile>
-    <Compile Include="Service References\PhraseReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\TranslationReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <Compile Include="..\WindowsPhoneCore\Models\CompleteTranslation.cs">
+      <Link>Models\CompleteTranslation.cs</Link>
     </Compile>
     <Compile Include="..\WindowsPhoneCore\ViewModels\DetailViewModel.cs">
       <Link>ViewModels\DetailViewModel.cs</Link>
@@ -70,65 +69,120 @@
       <Link>ViewModels\ResultViewModel.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\LanguageReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PhraseReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\TranslationReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\WindowsPhoneCore\ServiceReferences.ClientConfig">
-      <Link>ServiceReferences.ClientConfig</Link>
+    <WebReferenceUrl Include="http://192.168.75.103:59027/webservices/languageservice.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LanguageReference\</RelPath>
+      <UpdateFromURL>http://192.168.75.103:59027/webservices/languageservice.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.75.103:59027/webservices/phraseservice.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PhraseReference\</RelPath>
+      <UpdateFromURL>http://192.168.75.103:59027/webservices/phraseservice.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.75.103:59027/webservices/translationservice.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TranslationReference\</RelPath>
+      <UpdateFromURL>http://192.168.75.103:59027/webservices/translationservice.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\LanguageReference\Language.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Service References\PhraseReference\Core.PhraseReference.Phrase.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PhraseReference\PhraseService.wsdl" />
-    <None Include="Service References\PhraseReference\PhraseService.xsd">
+    <None Include="Web References\LanguageReference\LanguageService.wsdl" />
+    <None Include="Web References\LanguageReference\LanguageService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhraseReference\PhraseService1.xsd">
+    <None Include="Web References\LanguageReference\LanguageService0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhraseReference\PhraseService2.xsd">
+    <None Include="Web References\LanguageReference\LanguageService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TranslationReference\Core.TranslationReference.Translation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\TranslationReference\TranslationService.wsdl" />
-    <None Include="Service References\TranslationReference\TranslationService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TranslationReference\TranslationService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TranslationReference\TranslationService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TranslationReference\TranslationService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PhraseReference\configuration91.svcinfo" />
-    <None Include="Service References\PhraseReference\configuration.svcinfo" />
-    <None Include="Service References\PhraseReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
+    <None Include="Web References\LanguageReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\PhraseReference\" />
-    <WCFMetadataStorage Include="Service References\TranslationReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TranslationReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TranslationReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TranslationReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
+    <None Include="Web References\PhraseReference\Phrase.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PhraseReference\PhraseService.wsdl" />
+    <None Include="Web References\PhraseReference\PhraseService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PhraseReference\PhraseService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PhraseReference\PhraseService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PhraseReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TranslationReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TranslationReference\Translation.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TranslationReference\TranslationService.wsdl" />
+    <None Include="Web References\TranslationReference\TranslationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TranslationReference\TranslationService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TranslationReference\TranslationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TranslationReference\TranslationService2.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

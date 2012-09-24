@@ -17,28 +17,50 @@ namespace Core.ViewModels
             }
         }
 
-        public string SearchTerm { get; set; }
+        public string SearchTerm
+        {
+            get { return _searchTerm; }
+            set { _searchTerm = value; base.FirePropertyChanged("SearchTerm"); }
+        }
         public ObservableCollection<string> AllLexicals { get; set; }
         private TranslationServiceClient _translationClient;
+        private string _searchTerm;
+
+        public ObservableCollection<string> Items { get; set; }
 
         public MainViewModel()
         {
+            this.SearchTerm = string.Empty;
             this.CharacterCommand = new MvxRelayCommand<string>(this.GoCharacter_Execute, GoCharacter_CanExecute);
             this.LexicalCommand = new MvxRelayCommand<string>(this.GoLexical_Execute, this.GoLexical_CanExecute);
             this.AllLexicals = new ObservableCollection<string>();
 
             _translationClient = new TranslationServiceClient();
+#if SILVERLIGHT
             _translationClient.DisplayAllLexicalByLanguageCompleted += new EventHandler<DisplayAllLexicalByLanguageCompletedEventArgs>(DisplayAllLexicalByLanguageCompleted);
             _translationClient.DisplayAllLexicalByLanguageAsync(1);
+#else
+            _translationClient.DisplayAllLexicalByLanguageCompleted += new DisplayAllLexicalByLanguageCompletedEventHandler(DisplayAllLexicalByLanguageCompleted);
+            _translationClient.DisplayAllLexicalByLanguageAsync(1, true);
+            this.Items = new ObservableCollection<string>();
+#endif
         }
 
+#if SILVERLIGHT
         void DisplayAllLexicalByLanguageCompleted(object sender, DisplayAllLexicalByLanguageCompletedEventArgs e)
         {
             this.AllLexicals.Clear();
             foreach (var item in e.Result)
                 this.AllLexicals.Add(item);
         }
-
+#else
+        void DisplayAllLexicalByLanguageCompleted(object sender, DisplayAllLexicalByLanguageCompletedEventArgs e)
+        {
+            this.AllLexicals.Clear();
+            foreach (var item in e.Result)
+                this.AllLexicals.Add(item);
+        }
+#endif
         #region Character Command
         public IMvxCommand CharacterCommand { get; set; }
         void GoCharacter_Execute(object parameters)

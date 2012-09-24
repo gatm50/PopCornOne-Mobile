@@ -37,16 +37,12 @@
                     <DataTemplate>
                         <StackPanel>
                             <TextBlock FontSize="32">Content:</TextBlock>
-                            <!--<HyperlinkButton
-                                    Command="{Binding ElementName=This, 
-                                    Path=DataContext.PhraseCommand}" 
-                                    CommandParameter="{Binding}"
-                                    Content="{Binding Path=TranslationContent}" FontSize="42"  
-                                    />-->
-                            <TextBlock Text="{Binding Path=TranslationContent}" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock Text="{Binding Path=Translation.TranslationContent}" TextWrapping="Wrap"></TextBlock>
                             <TextBlock FontSize="32">Description:</TextBlock>
-                            <TextBlock Text="{Binding Path=TranslationDescription}" TextWrapping="Wrap"></TextBlock>
-                            <TextBlock Text="{Binding Path=Lexicon}" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock Text="{Binding Path=Translation.TranslationDescription}" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock Text="{Binding Path=Translation.Lexicon}" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock FontSize="28">Language:</TextBlock>
+                            <TextBlock Text="{Binding Path=Language.LanguageName}" TextWrapping="Wrap"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
