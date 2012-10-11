@@ -89,10 +89,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.75.10:59027/webservices/languageservice.svc%3fwsdl">
+    <WebReferenceUrl Include="http://192.168.75.100:59027/webservices/languageservice.svc%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\LanguageReference\</RelPath>
-      <UpdateFromURL>http://192.168.75.10:59027/webservices/languageservice.svc%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>http://192.168.75.100:59027/webservices/languageservice.svc%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -102,10 +102,10 @@
       <CachedSettingsPropName>
       </CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://192.168.75.10:59027/webservices/phraseservice.svc%3fwsdl">
+    <WebReferenceUrl Include="http://192.168.75.100:59027/webservices/phraseservice.svc%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\PhraseReference\</RelPath>
-      <UpdateFromURL>http://192.168.75.10:59027/webservices/phraseservice.svc%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>http://192.168.75.100:59027/webservices/phraseservice.svc%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -115,10 +115,10 @@
       <CachedSettingsPropName>
       </CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://192.168.75.10:59027/webservices/translationservice.svc%3fwsdl">
+    <WebReferenceUrl Include="http://192.168.75.100:59027/webservices/translationservice.svc%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\TranslationReference\</RelPath>
-      <UpdateFromURL>http://192.168.75.10:59027/webservices/translationservice.svc%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>http://192.168.75.100:59027/webservices/translationservice.svc%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

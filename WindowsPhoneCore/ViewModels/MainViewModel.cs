@@ -23,7 +23,11 @@ namespace Core.ViewModels
             set { _searchTerm = value; base.FirePropertyChanged("SearchTerm"); }
         }
         public ObservableCollection<string> AllLexicals { get; set; }
+#if SILVERLIGHT
         private TranslationServiceClient _translationClient;
+#else
+        private TranslationService _translationClient;
+#endif
         private string _searchTerm;
 
         public ObservableCollection<string> Items { get; set; }
@@ -35,11 +39,14 @@ namespace Core.ViewModels
             this.LexicalCommand = new MvxRelayCommand<string>(this.GoLexical_Execute, this.GoLexical_CanExecute);
             this.AllLexicals = new ObservableCollection<string>();
 
-            _translationClient = new TranslationServiceClient();
 #if SILVERLIGHT
+            _translationClient = new TranslationServiceClient();
+
             _translationClient.DisplayAllLexicalByLanguageCompleted += new EventHandler<DisplayAllLexicalByLanguageCompletedEventArgs>(DisplayAllLexicalByLanguageCompleted);
             _translationClient.DisplayAllLexicalByLanguageAsync(1);
 #else
+            _translationClient = new TranslationService();
+
             _translationClient.DisplayAllLexicalByLanguageCompleted += new DisplayAllLexicalByLanguageCompletedEventHandler(DisplayAllLexicalByLanguageCompleted);
             _translationClient.DisplayAllLexicalByLanguageAsync(1, true);
             this.Items = new ObservableCollection<string>();

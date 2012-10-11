@@ -27,7 +27,7 @@ namespace Core.PhraseReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IPhraseService", Namespace="http://tempuri.org/")]
-    public partial class PhraseServiceClient : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    public partial class PhraseService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback DisplayPhrasesOperationCompleted;
         
@@ -40,8 +40,8 @@ namespace Core.PhraseReference {
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public PhraseServiceClient() {
-            this.Url = "http://192.168.75.10:59027/WebServices/PhraseService.svc";
+        public PhraseService() {
+            this.Url = "http://192.168.75.100:59027/WebServices/PhraseService.svc";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

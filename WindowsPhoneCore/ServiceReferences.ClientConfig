@@ -17,13 +17,13 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://192.168.75.103:59027/WebServices/TranslationService.svc"
+            <endpoint address="http://localhost:59027/WebServices/TranslationService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITranslationService"
                 contract="TranslationReference.ITranslationService" name="BasicHttpBinding_ITranslationService" />
-            <endpoint address="http://192.168.75.103:59027/WebServices/PhraseService.svc"
+            <endpoint address="http://localhost:59027/WebServices/PhraseService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPhraseService"
                 contract="PhraseReference.IPhraseService" name="BasicHttpBinding_IPhraseService" />
-            <endpoint address="http://192.168.75.103:59027/WebServices/LanguageService.svc"
+            <endpoint address="http://localhost:59027/WebServices/LanguageService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ILanguageService"
                 contract="LanguageReference.ILanguageService" name="BasicHttpBinding_ILanguageService" />
         </client>

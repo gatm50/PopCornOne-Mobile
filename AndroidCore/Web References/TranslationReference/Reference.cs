@@ -27,7 +27,7 @@ namespace Core.TranslationReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_ITranslationService", Namespace="http://tempuri.org/")]
-    public partial class TranslationServiceClient : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    public partial class TranslationService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback DisplayTranslationsOperationCompleted;
         
@@ -50,8 +50,8 @@ namespace Core.TranslationReference {
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public TranslationServiceClient() {
-            this.Url = "http://192.168.75.10:59027/WebServices/TranslationService.svc";
+        public TranslationService() {
+            this.Url = "http://192.168.75.100:59027/WebServices/TranslationService.svc";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

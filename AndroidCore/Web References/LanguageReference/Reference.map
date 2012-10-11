@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://192.168.75.10:59027/webservices/languageservice.svc?wsdl" filename="LanguageService.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.75.10:59027/WebServices/LanguageService.svc?xsd=xsd2" filename="LanguageService.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.75.10:59027/WebServices/LanguageService.svc?xsd=xsd1" filename="LanguageService0.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.75.10:59027/WebServices/LanguageService.svc?xsd=xsd0" filename="LanguageService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://192.168.75.100:59027/webservices/languageservice.svc?wsdl" filename="LanguageService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.75.100:59027/WebServices/LanguageService.svc?xsd=xsd0" filename="LanguageService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.75.100:59027/WebServices/LanguageService.svc?xsd=xsd2" filename="LanguageService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.75.100:59027/WebServices/LanguageService.svc?xsd=xsd1" filename="LanguageService1.xsd" />
   </Results>
 </DiscoveryClientResultsFile>

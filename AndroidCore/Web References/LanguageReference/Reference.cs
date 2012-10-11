@@ -27,7 +27,7 @@ namespace Core.LanguageReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_ILanguageService", Namespace="http://tempuri.org/")]
-    public partial class LanguageServiceClient : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    public partial class LanguageService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback DisplayLanguagesOperationCompleted;
         
@@ -40,8 +40,8 @@ namespace Core.LanguageReference {
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public LanguageServiceClient() {
-            this.Url = "http://192.168.75.10:59027/WebServices/LanguageService.svc";
+        public LanguageService() {
+            this.Url = "http://192.168.75.100:59027/WebServices/LanguageService.svc";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -11,17 +11,23 @@ namespace Core.ViewModels
     {
         public ObservableCollection<Translation> Results { get; set; }
         public string Value { get; set; }
+#if SILVERLIGHT
         private TranslationServiceClient _translationClient;
-
+#else
+        private TranslationService _translationClient;
+#endif
         public ResultViewModel(string valueToQuery = "", string type = "")
         {
             this.Results = new ObservableCollection<Translation>();
-            _translationClient = new TranslationServiceClient();
 #if SILVERLIGHT
+            _translationClient = new TranslationServiceClient();
+
             _translationClient.DisplayTranslationByLexiconCompleted += new EventHandler<DisplayTranslationByLexiconCompletedEventArgs>(DisplayTranslationByLexiconCompleted);
             _translationClient.DisplayTranslationByFirstLetterCompleted += new EventHandler<DisplayTranslationByFirstLetterCompletedEventArgs>(DisplayTranslationByFirstLetterCompleted);
             _translationClient.DisplayTranslationByLanguageCompleted += new EventHandler<DisplayTranslationByLanguageCompletedEventArgs>(DisplayTranslationByLanguageCompleted);
 #else
+            _translationClient = new TranslationService();
+
             _translationClient.DisplayTranslationByLexiconCompleted += new DisplayTranslationByLexiconCompletedEventHandler(DisplayTranslationByLexiconCompleted);
             _translationClient.DisplayTranslationByFirstLetterCompleted += new DisplayTranslationByFirstLetterCompletedEventHandler(DisplayTranslationByFirstLetterCompleted);
             _translationClient.DisplayTranslationByLanguageCompleted += new DisplayTranslationByLanguageCompletedEventHandler(DisplayTranslationByLanguageCompleted);
