@@ -28,9 +28,12 @@ namespace Core.ViewModels
 
             _translationClient.DisplayTranslationsByPhraseIdAsync(Convert.ToInt32(phraseId));
 #else
+            _translationClient.DisplayTranslationsByPhraseIdCompleted += new DisplayTranslationsByPhraseIdCompletedEventHandler(DisplayTranslationsByPhraseIdCompleted);
+            _languageClient.DisplayLanguagesCompleted += new DisplayLanguagesCompletedEventHandler(DisplayLanguagesCompleted);
+
+            _translationClient.DisplayTranslationsByPhraseIdAsync(Convert.ToInt32(phraseId), true);
 #endif
             
-
             this.Results = new ObservableCollection<CompleteTranslation>();
             _temporalTranslations = new List<Translation>();
         }

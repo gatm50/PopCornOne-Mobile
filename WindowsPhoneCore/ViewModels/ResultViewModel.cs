@@ -22,6 +22,9 @@ namespace Core.ViewModels
             _translationClient.DisplayTranslationByFirstLetterCompleted += new EventHandler<DisplayTranslationByFirstLetterCompletedEventArgs>(DisplayTranslationByFirstLetterCompleted);
             _translationClient.DisplayTranslationByLanguageCompleted += new EventHandler<DisplayTranslationByLanguageCompletedEventArgs>(DisplayTranslationByLanguageCompleted);
 #else
+            _translationClient.DisplayTranslationByLexiconCompleted += new DisplayTranslationByLexiconCompletedEventHandler(DisplayTranslationByLexiconCompleted);
+            _translationClient.DisplayTranslationByFirstLetterCompleted += new DisplayTranslationByFirstLetterCompletedEventHandler(DisplayTranslationByFirstLetterCompleted);
+            _translationClient.DisplayTranslationByLanguageCompleted += new DisplayTranslationByLanguageCompletedEventHandler(DisplayTranslationByLanguageCompleted);
 #endif
             this.PhraseCommand = new MvxRelayCommand<Translation>(this.GoPhrase_Execute, this.GoPhrase_CanExecute);
 
@@ -36,24 +39,28 @@ namespace Core.ViewModels
 #if SILVERLIGHT
                     _translationClient.DisplayTranslationByFirstLetterAsync(valueToQuery, 1);
 #else
+                    _translationClient.DisplayTranslationByFirstLetterAsync(valueToQuery, 1, true);
 #endif
                     break;
                 case "ByLexicon":
 #if SILVERLIGHT
                     _translationClient.DisplayTranslationByLexiconAsync(valueToQuery, 1);
 #else
+                    _translationClient.DisplayTranslationByLexiconAsync(valueToQuery, 1, true);
 #endif
                     break;
                 case "ByLanguage":
 #if SILVERLIGHT
                     _translationClient.DisplayTranslationByLanguageAsync(1);
 #else
+                    _translationClient.DisplayTranslationByLanguageAsync(1, true);
 #endif
                     break;
                 default:
 #if SILVERLIGHT
                     _translationClient.DisplayTranslationByLanguageAsync(1);
 #else
+                    _translationClient.DisplayTranslationByLanguageAsync(1, true);
 #endif
                     break;
             }

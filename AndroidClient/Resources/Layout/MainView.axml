@@ -22,4 +22,29 @@
         p1:id="@+id/button1"
         p1:layout_marginLeft="90dp"
         local:MvxBind="{&apos;Click&apos;:{&apos;Path&apos;:&apos;SearchCommand&apos;}}" />
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="fill_parent"
+        p1:layout_height="60dp"
+        p1:id="@+id/linearLayout2"
+        p1:layout_marginTop="275.0dp">
+        <Button
+            p1:text="Show All Lexical"
+            p1:layout_width="wrap_content"
+            p1:layout_height="fill_parent"
+            p1:id="@+id/button2"
+            p1:layout_marginLeft="7dp" />
+        <Button
+            p1:text="Options"
+            p1:layout_width="wrap_content"
+            p1:layout_height="fill_parent"
+            p1:id="@+id/button3" />
+        <Button
+            p1:text="Help"
+            p1:layout_width="wrap_content"
+            p1:layout_height="fill_parent"
+            p1:id="@+id/button4" />
+    </LinearLayout>
 </LinearLayout>

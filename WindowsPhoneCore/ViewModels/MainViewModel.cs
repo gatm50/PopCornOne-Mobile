@@ -13,7 +13,7 @@ namespace Core.ViewModels
         {
             get
             {
-                return new MvxRelayCommand(() => RequestNavigate<ResultViewModel>(new { valueToQuery = this.SearchTerm, type = "ByLanguage" }));
+                return new MvxRelayCommand(() => RequestNavigate<ResultViewModel>(new { valueToQuery = this.SearchTerm, type = "ByLexicon" }));
             }
         }
 

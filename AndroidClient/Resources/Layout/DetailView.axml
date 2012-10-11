@@ -3,5 +3,5 @@
     xmlns:local="http://schemas.android.com/apk/res/Android.Client"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    local:MvxBind="{&apos;ItemsSource&apos;:{&apos;Path&apos;:&apos;Results&apos;}, &apos;ItemClick&apos;:{&apos;Path&apos;:&apos;PhraseCommand&apos;}}"
-    local:MvxItemTemplate="@layout/result_viewmodel" />
+    local:MvxBind="{&apos;ItemsSource&apos;:{&apos;Path&apos;:&apos;Results&apos;}}"
+    local:MvxItemTemplate="@layout/detail_viewmodel" />
