@@ -97,6 +97,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Drawable\Tab_Sessions.xml" />
+    <AndroidResource Include="Resources\Drawable\Tab_Welcome.xml" />
+    <AndroidResource Include="Resources\Drawable\appbar_database.png" />
+    <AndroidResource Include="Resources\Drawable\appbar_home.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AndroidCore\AndroidCore.csproj">

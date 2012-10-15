@@ -25,6 +25,8 @@ namespace Core.ViewModels
 
         public DetailViewModel(string phraseId)
         {
+            this.Results = new ObservableCollection<CompleteTranslation>();
+            _temporalTranslations = new List<Translation>();
 #if SILVERLIGHT
             _translationClient = new TranslationServiceClient();
             _languageClient = new LanguageServiceClient();
@@ -44,9 +46,6 @@ namespace Core.ViewModels
 
             _translationClient.DisplayTranslationsByPhraseIdAsync(Convert.ToInt32(phraseId), true);
 #endif
-            
-            this.Results = new ObservableCollection<CompleteTranslation>();
-            _temporalTranslations = new List<Translation>();
         }
 
         void DisplayLanguagesCompleted(object sender, DisplayLanguagesCompletedEventArgs e)
@@ -57,7 +56,7 @@ namespace Core.ViewModels
                 {
                     if (translation.LanguageId == language.LanguageId)
                     {
-                        this.Results.Add(new CompleteTranslation() { Translation = translation, Language = language });
+                        this.Results.Add(new CompleteTranslation(translation,language)); /*{ Translation = translation, Language = language }*/
                         break;
                     }
                 }

@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res/Android.Client"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="6dip"
-    android:layout_marginTop="6dip"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;Translation.TranslationContent&apos;}}" />
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="Content:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <TextView
+        local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;Translation.TranslationContent&apos;}}"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <TextView
+        android:text="Description:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+    <TextView
+        local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;Translation.TranslationDescription&apos;}}"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4" />
+    <TextView
+        local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;Translation.Lexicon&apos;}}"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+    <TextView
+        android:text="Language:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6" />
+    <TextView
+        local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;Language.LanguageName&apos;}}"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7" />
+</LinearLayout>

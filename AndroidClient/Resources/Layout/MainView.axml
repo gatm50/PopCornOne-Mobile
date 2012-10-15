@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res/Android.Client"
-    p1:orientation="vertical"
-    p1:minWidth="25px"
-    p1:minHeight="25px"
-    p1:layout_width="fill_parent"
-    p1:layout_height="fill_parent"
-    p1:id="@+id/linearLayout1">
-    <EditText
-        p1:layout_width="240.0dp"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/editText1"
-        p1:layout_marginTop="25dp"
-        p1:layout_marginBottom="10dp"
-        p1:layout_marginLeft="40dp"
-        local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;SearchTerm&apos;}}" />
-    <Button
-        p1:text="Search Lexic"
-        p1:layout_width="140.0dp"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/button1"
-        p1:layout_marginLeft="90dp"
-        local:MvxBind="{&apos;Click&apos;:{&apos;Path&apos;:&apos;SearchCommand&apos;}}" />
-    <LinearLayout
-        p1:orientation="horizontal"
-        p1:minWidth="25px"
-        p1:minHeight="25px"
-        p1:layout_width="fill_parent"
-        p1:layout_height="60dp"
-        p1:id="@+id/linearLayout2"
-        p1:layout_marginTop="275.0dp">
-        <Button
-            p1:text="Show All Lexical"
-            p1:layout_width="wrap_content"
-            p1:layout_height="fill_parent"
-            p1:id="@+id/button2"
-            p1:layout_marginLeft="7dp" />
-        <Button
-            p1:text="Options"
-            p1:layout_width="wrap_content"
-            p1:layout_height="fill_parent"
-            p1:id="@+id/button3" />
-        <Button
-            p1:text="Help"
-            p1:layout_width="wrap_content"
-            p1:layout_height="fill_parent"
-            p1:id="@+id/button4" />
-    </LinearLayout>
-</LinearLayout>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/tabHost">
+    <TabWidget
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@android:id/tabs" />
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@android:id/tabcontent">
+        <LinearLayout xmlns:local="http://schemas.android.com/apk/res/Android.Client"
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingTop="100px"
+            android:id="@+id/tab1">
+            <EditText
+                android:layout_width="240.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText1"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="40dp"
+                local:MvxBind="{&apos;Text&apos;:{&apos;Path&apos;:&apos;SearchTerm&apos;}}" />
+            <Button
+                android:text="Search Lexic"
+                android:layout_width="140.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1"
+                android:layout_marginLeft="90dp"
+                local:MvxBind="{&apos;Click&apos;:{&apos;Path&apos;:&apos;SearchCommand&apos;}}" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/tab2"
+            android:paddingTop="100px"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <Mvx.mvxBindableListView xmlns:local="http://schemas.android.com/apk/res/Android.Client"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                local:MvxBind="{&apos;ItemsSource&apos;:{&apos;Path&apos;:&apos;AllLexicals&apos;}, &apos;ItemClick&apos;:{&apos;Path&apos;:&apos;LexicalCommand&apos;}}" />
+        </LinearLayout>
+    </FrameLayout>
+</TabHost>

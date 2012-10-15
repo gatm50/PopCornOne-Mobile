@@ -38,6 +38,7 @@ namespace Core.ViewModels
             this.CharacterCommand = new MvxRelayCommand<string>(this.GoCharacter_Execute, GoCharacter_CanExecute);
             this.LexicalCommand = new MvxRelayCommand<string>(this.GoLexical_Execute, this.GoLexical_CanExecute);
             this.AllLexicals = new ObservableCollection<string>();
+            this.Items = new ObservableCollection<string>();
 
 #if SILVERLIGHT
             _translationClient = new TranslationServiceClient();
@@ -49,7 +50,6 @@ namespace Core.ViewModels
 
             _translationClient.DisplayAllLexicalByLanguageCompleted += new DisplayAllLexicalByLanguageCompletedEventHandler(DisplayAllLexicalByLanguageCompleted);
             _translationClient.DisplayAllLexicalByLanguageAsync(1, true);
-            this.Items = new ObservableCollection<string>();
 #endif
         }
 

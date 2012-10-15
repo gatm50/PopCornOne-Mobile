@@ -10,7 +10,7 @@ namespace AndroidClient.Views
     {
         protected override void OnViewModelSet()
         {
-            SetContentView(Resource.Layout.ResultView);
+            SetContentView(Resource.Layout.DetailView);
         }
     }
 }
