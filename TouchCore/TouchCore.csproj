@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F5822C4-A608-4C30-A6C0-B0FEBF86F81A}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="CirriousMvvmCrossTouch">
+      <HintPath>..\..\MvvmCross\Cirrious\Cirrious.MvvmCross\Bin\iPhone\Debug\CirriousMvvmCrossTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\MSBuild\MonoTouch\Novell.MonoTouch.Common.targets" Condition="'$(windir)' != '' " />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="..\WindowsPhoneCore\ApplicationObjects\StartApplicationObject.cs">
+      <Link>ApplicationObjects\StartApplicationObject.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\Models\CompleteTranslation.cs">
+      <Link>Models\CompleteTranslation.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ViewModels\DetailViewModel.cs">
+      <Link>ViewModels\DetailViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ViewModels\MainViewModel.cs">
+      <Link>ViewModels\MainViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\ViewModels\ResultViewModel.cs">
+      <Link>ViewModels\ResultViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\TranslationReference\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web References\PhraseReference\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web References\LanguageReference\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="..\WindowsPhoneCore\App.cs">
+      <Link>App.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://147.183.192.26:59027/WebServices/TranslationService.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TranslationReference\</RelPath>
+      <UpdateFromURL>http://147.183.192.26:59027/WebServices/TranslationService.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://147.183.192.26:59027/WebServices/PhraseService.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PhraseReference\</RelPath>
+      <UpdateFromURL>http://147.183.192.26:59027/WebServices/PhraseService.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://147.183.192.26:59027/WebServices/LanguageService.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LanguageReference\</RelPath>
+      <UpdateFromURL>http://147.183.192.26:59027/WebServices/LanguageService.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LanguageReference\Language.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LanguageReference\LanguageService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PhraseReference\Phrase.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PhraseReference\PhraseService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TranslationReference\Translation.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TranslationReference\TranslationService.xsd" />
+    <None Include="Web References\TranslationReference\TranslationService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TranslationReference\TranslationService1.xsd" />
+    <None Include="Web References\TranslationReference\TranslationService2.xsd" />
+    <None Include="Web References\TranslationReference\TranslationService.wsdl" />
+    <None Include="Web References\TranslationReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PhraseReference\PhraseService.xsd" />
+    <None Include="Web References\PhraseReference\PhraseService1.xsd" />
+    <None Include="Web References\PhraseReference\PhraseService.wsdl" />
+    <None Include="Web References\PhraseReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LanguageReference\LanguageService.xsd" />
+    <None Include="Web References\LanguageReference\LanguageService1.xsd" />
+    <None Include="Web References\LanguageReference\LanguageService.wsdl" />
+    <None Include="Web References\LanguageReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

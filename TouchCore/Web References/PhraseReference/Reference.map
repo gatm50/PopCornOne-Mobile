@@ -4,6 +4,6 @@
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/PhraseService.svc?xsd=xsd0" filename="PhraseService.xsd" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/PhraseService.svc?xsd=xsd1" filename="PhraseService0.xsd" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/PhraseService.svc?xsd=xsd2" filename="PhraseService1.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://147.183.192.26:59027/webservices/phraseservice.svc?wsdl" filename="PhraseService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://147.183.192.26:59027/WebServices/PhraseService.svc?wsdl" filename="PhraseService.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>

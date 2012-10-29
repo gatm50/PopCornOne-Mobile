@@ -4,7 +4,7 @@
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/TranslationService.svc?xsd=xsd2" filename="TranslationService.xsd" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/TranslationService.svc?xsd=xsd1" filename="TranslationService0.xsd" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/TranslationService.svc?xsd=xsd3" filename="TranslationService1.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://147.183.192.26:59027/webservices/translationservice.svc?wsdl" filename="TranslationService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://147.183.192.26:59027/WebServices/TranslationService.svc?wsdl" filename="TranslationService.wsdl" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://147.183.192.26:59027/WebServices/TranslationService.svc?xsd=xsd0" filename="TranslationService2.xsd" />
   </Results>
 </DiscoveryClientResultsFile>

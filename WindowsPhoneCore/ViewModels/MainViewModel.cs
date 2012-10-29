@@ -83,7 +83,7 @@ namespace Core.ViewModels
 
         #region Lexical Command
         public IMvxCommand LexicalCommand { get; set; }
-        void GoLexical_Execute(object parameters)
+        public void GoLexical_Execute(object parameters)
         {
             RequestNavigate<ResultViewModel>(new { valueToQuery = (parameters as string), type = "ByLexicon" });
         }

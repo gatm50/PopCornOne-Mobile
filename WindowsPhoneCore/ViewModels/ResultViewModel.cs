@@ -129,13 +129,13 @@ namespace Core.ViewModels
 
         #region Phrase Command
         public IMvxCommand PhraseCommand { get; set; }
-        void GoPhrase_Execute(object parameters)
+        public void GoPhrase_Execute(object parameters)
         {
             string phraseId = (parameters as Translation).PhraseId.ToString();
             RequestNavigate<DetailViewModel>(new { phraseId = phraseId });
         }
 
-        bool GoPhrase_CanExecute(object parameters)
+        public bool GoPhrase_CanExecute(object parameters)
         {
             return true;
         }
